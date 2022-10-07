@@ -26,7 +26,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 500;
+  z-index: 1000;
 }
 
 .menuIcons {
@@ -69,10 +69,9 @@ ul {
   position: absolute;
   width: 0;
   height: 90vh;
-  top: 6.7vh;
+  top: 7.5vh;
   left: -2.5vw;
   bottom: 0;
-  z-index: 100;
   background: dodgerblue;
   transition: 0.5s;
   overflow: hidden;
@@ -132,12 +131,15 @@ img {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.6);
-  /* display: flex; */
   display: none;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.modal.active {
+  display: flex;
 }
 
 .modal .modal-dialog {
