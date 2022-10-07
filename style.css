@@ -1,0 +1,209 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100vw;
+  min-height: 10vh;
+  background-color: rgb(250, 250, 244);
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+nav {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 500;
+}
+
+.menuIcons {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menuIcons div {
+  width: 100%;
+  height: 2px;
+  background: dodgerblue;
+  transition: 0.5s;
+}
+
+.menuIcons.active div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menuIcons.active div:last-child {
+  transform: rotate(-45deg);
+}
+
+.menuIcons.active div:nth-child(2) {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  line-height: 1.8;
+  position: absolute;
+  width: 0;
+  height: 90vh;
+  top: 6.7vh;
+  left: -2.5vw;
+  bottom: 0;
+  z-index: 100;
+  background: dodgerblue;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+ul.active {
+  width: 80vw;
+  padding: 20px;
+}
+
+.backdrop {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 5;
+}
+
+.backdrop.active {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(36, 33, 33);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(1em, 1em + 3vw 4em);
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  border: 1px solid red;
+  padding: 1px;
+  overflow: hidden;
+}
+
+section {
+  width: 100vw;
+  margin-bottom: 2vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal .modal-dialog {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 2px #ccc;
+  width: 95%;
+  margin: auto;
+  max-width: 800px;
+}
+
+.modal-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.modal-head button {
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.modal-body {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-body button {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  color: white;
+}
+
+.modal-body button:first-child {
+  background-color: green;
+}
+
+.modal-body button:last-child {
+  background: red;
+}
+
+@media screen and (min-width: 800px) {
+  ul {
+    position: static;
+    width: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+    background: inherit;
+    flex: 1;
+  }
+
+  .logo {
+    flex: 3;
+  }
+
+  .menuIcons {
+    display: none;
+  }
+}
